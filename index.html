@@ -6,11 +6,11 @@
   3 MOVES AHEAD – single-page marketing site
   ============================================================
   TODO BEFORE DEPLOY (search for each marker in this file):
-    1. EMAIL_ONE@example.com,EMAIL_TWO@example.com
-         -> replace with the two real recipient addresses in the
-            <form action="https://formsubmit.co/..."> below.
-            FormSubmit will send a ONE-TIME activation email to each
-            address on the first submission; both must be confirmed.
+    1. Form recipients — DONE. FormSubmit takes ONE address in the
+         <form action="https://formsubmit.co/..."> URL; any additional
+         recipients go in the hidden _cc field. A ONE-TIME activation
+         email goes to the action address on the first submission and
+         must be confirmed before any mail is delivered.
     2. VIDEO_ID_1 / VIDEO_ID_2 / VIDEO_ID_3
          -> replace with the YouTube video IDs (the part after v= in
             a YouTube URL). Update the captions under each video too.
@@ -506,8 +506,9 @@
       <img class="brand-mark" src="assets/logo-primary-white.svg" alt="">
     </div>
     <div class="form-card" id="form-card">
-      <!-- TODO: replace EMAIL_ONE@example.com,EMAIL_TWO@example.com with the two real recipient addresses -->
-      <form action="https://formsubmit.co/nathalie.linda.maitre@emory.edu,danielmcopeland@gmail.com" method="POST" id="info-form">
+      <!-- FormSubmit accepts ONE address in the action URL; extra recipients go in _cc. -->
+      <form action="https://formsubmit.co/danielmcopeland@gmail.com" method="POST" id="info-form">
+        <input type="hidden" name="_cc" value="nathalie.linda.maitre@emory.edu">
         <input type="hidden" name="_subject" value="3 Moves Ahead: new information request">
         <input type="hidden" name="_template" value="table">
         <input type="hidden" name="_captcha" value="false">
