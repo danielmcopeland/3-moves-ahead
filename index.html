@@ -26,9 +26,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>3 Moves Ahead | Helping Your Baby Move, Play and Grow</title>
-<meta name="description" content="3 Moves Ahead is a nine-module program that helps parents support their baby's motor development through play, positive parenting and everyday routines.">
+<meta name="description" content="3 Moves Ahead is a nine-module program that helps parents support their baby's motor development through play, positive parenting and everyday routines, alongside a community of parents and movement experts.">
 <meta property="og:title" content="3 Moves Ahead">
-<meta property="og:description" content="Helping parents support their baby's motor development through play, positive parenting and everyday routines.">
+<meta property="og:description" content="Helping parents support their baby's motor development through play, positive parenting and everyday routines, with a community of parents and movement experts alongside.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://danielmcopeland.github.io/3-moves-ahead/">
 <meta property="og:image" content="https://danielmcopeland.github.io/3-moves-ahead/assets/app-icon.svg">
@@ -164,6 +164,7 @@
     background: radial-gradient(circle at 30% 30%, rgba(255,255,255,.45), transparent 45%), var(--c, var(--cyan));
     box-shadow: 0 8px 18px rgba(46,54,120,.18);
   }
+  .step-num svg { width: 28px; height: 28px; }
   .step h3 { margin-bottom: .4rem; }
   .step p { margin: 0; color: var(--muted); }
   .note {
@@ -262,6 +263,8 @@
 
   /* Responsive */
   @media (max-width: 960px) {
+    .nav-links { gap: 1.1rem; }
+    .nav-links a { font-size: .92rem; }
     .steps, .modules, .videos, .merch { grid-template-columns: repeat(2, 1fr); }
     .domains { grid-template-columns: repeat(2, 1fr); }
     .footer-grid { grid-template-columns: 1fr 1fr; }
@@ -309,6 +312,7 @@
       <li><a href="#why">Why Movement</a></li>
       <li><a href="#how">How It Works</a></li>
       <li><a href="#program">The Program</a></li>
+      <li><a href="#community">Community</a></li>
       <li><a href="#videos">Videos</a></li>
       <li><a href="#parents">For Parents</a></li>
       <li><a class="btn btn-primary" href="#contact">Get More Info</a></li>
@@ -331,7 +335,7 @@
       </div>
       <div class="hero-note">
         <img src="assets/app-icon.png" alt="3 Moves Ahead app icon">
-        <span>Short lessons, real-life activities and a milestone guide, all in one app.</span>
+        <span>Short lessons, real-life activities and a milestone guide, plus a community of parents and experts.</span>
       </div>
     </div>
     <div class="hero-visual">
@@ -423,8 +427,56 @@
   </div>
 </section>
 
+<!-- ============ COMMUNITY ============ -->
+<section class="section band" id="community">
+  <div class="container">
+    <div class="center narrow">
+      <span class="eyebrow">Community</span>
+      <h2>Parents learn best from other parents.</h2>
+      <p class="lead">The app is one half of 3 Moves Ahead. The other half is people: families working on the very same milestones, movement experts guiding the conversation, and the care team already near you.</p>
+    </div>
+    <div class="steps">
+      <article class="step">
+        <div class="step-num" style="--c: var(--cyan)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M3 6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-8l-4.5 3.5V16H5a2 2 0 0 1-2-2V6z"/>
+            <circle cx="8.5" cy="10" r="1.1" fill="currentColor" stroke="none"/>
+            <circle cx="12" cy="10" r="1.1" fill="currentColor" stroke="none"/>
+            <circle cx="15.5" cy="10" r="1.1" fill="currentColor" stroke="none"/>
+          </svg>
+        </div>
+        <h3>Online discussions</h3>
+        <p>Ask the question you were about to type into a search bar at 2am, and hear back from parents whose baby was working on that exact skill last month.</p>
+      </article>
+      <article class="step">
+        <div class="step-num" style="--c: var(--purple)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="9" cy="8" r="3.2"/>
+            <path d="M3 19.5c0-3.3 2.7-5.5 6-5.5s6 2.2 6 5.5"/>
+            <path d="M16.4 5.6a3.2 3.2 0 0 1 0 6.2"/>
+            <path d="M18 14.3c2 .8 3.4 2.5 3.4 5.2"/>
+          </svg>
+        </div>
+        <h3>Peer-to-peer group sessions</h3>
+        <p>Meet other families in small live groups, moderated by movement experts who keep the advice sound and make sure every parent gets a turn.</p>
+      </article>
+      <article class="step">
+        <div class="step-num" style="--c: var(--navy)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 21.5s7-5.6 7-11a7 7 0 1 0-14 0c0 5.4 7 11 7 11z"/>
+            <circle cx="12" cy="10.2" r="2.4"/>
+          </svg>
+        </div>
+        <h3>Community resources near you</h3>
+        <p>Find the programs, clinics and support in your area, and get help taking what you have learned to the people who care for your child.</p>
+      </article>
+    </div>
+    <p class="note"><strong>Connecting you to your local healthcare system.</strong> Knowing what your baby is working on is one thing; getting the right support for it is another. Our community resources point you toward the early-intervention programs, therapists and clinics near you, and help you arrive with the questions worth asking.</p>
+  </div>
+</section>
+
 <!-- ============ VIDEOS ============ -->
-<section class="section band" id="videos">
+<section class="section" id="videos">
   <div class="container">
     <div class="center narrow">
       <span class="eyebrow">Watch</span>
@@ -434,7 +486,7 @@
     <div class="videos">
       <figure class="video-card">
         <div class="video-frame">
-          <iframe src="https://www.youtube-nocookie.com/embed/VIDEO_ID_1" title="3 Moves Ahead video 1" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+          <iframe src="https://youtu.be/CRkYUP-whN0" title="3 Moves Ahead video 1" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
         </div>
         <figcaption><strong>Welcome to 3 Moves Ahead</strong><span>An introduction to the program and who it is for.</span></figcaption>
       </figure>
@@ -455,7 +507,7 @@
 </section>
 
 <!-- ============ FOR PARENTS / BENEFITS ============ -->
-<section class="section" id="parents">
+<section class="section band" id="parents">
   <div class="container">
     <div class="center narrow">
       <span class="eyebrow">For parents</span>
@@ -479,6 +531,7 @@
           <li>Positive parenting tools you can use every day</li>
           <li>Ideas that fit into routines you already have</li>
           <li>A whole module on looking after yourself, too</li>
+          <li>A community of other parents, with movement experts moderating</li>
         </ul>
       </article>
     </div>
@@ -569,6 +622,7 @@
           <li><a href="#why">Why Movement</a></li>
           <li><a href="#how">How It Works</a></li>
           <li><a href="#program">The Program</a></li>
+          <li><a href="#community">Community</a></li>
           <li><a href="#videos">Videos</a></li>
           <li><a href="#contact">Get More Info</a></li>
         </ul>
