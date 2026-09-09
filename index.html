@@ -11,9 +11,13 @@
          recipients go in the hidden _cc field. A ONE-TIME activation
          email goes to the action address on the first submission and
          must be confirmed before any mail is delivered.
-    2. VIDEO_ID_1 / VIDEO_ID_2 / VIDEO_ID_3
+    2. VIDEO_ID_2 / VIDEO_ID_3  (video 1 is DONE)
          -> replace with the YouTube video IDs (the part after v= in
             a YouTube URL). Update the captions under each video too.
+         NOTE: the src must be the /embed/ form —
+            https://www.youtube-nocookie.com/embed/<ID>
+         A youtu.be/<ID> or /watch?v=<ID> URL will NOT load in an
+         iframe (YouTube sends X-Frame-Options on those pages).
     3. https://USERNAME.github.io/REPO/
          -> replace with the live GitHub Pages URL (used in the form's
             _next redirect and in the Open Graph tags).
@@ -486,7 +490,7 @@
     <div class="videos">
       <figure class="video-card">
         <div class="video-frame">
-          <iframe src="https://youtu.be/CRkYUP-whN0" title="3 Moves Ahead video 1" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+          <iframe src="https://www.youtube-nocookie.com/embed/CRkYUP-whN0" title="3 Moves Ahead video 1" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
         </div>
         <figcaption><strong>Welcome to 3 Moves Ahead</strong><span>An introduction to the program and who it is for.</span></figcaption>
       </figure>
