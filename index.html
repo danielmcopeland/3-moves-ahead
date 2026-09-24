@@ -6,11 +6,11 @@
   3 MOVES AHEAD – single-page marketing site
   ============================================================
   TODO BEFORE DEPLOY (search for each marker in this file):
-    1. Form recipients — DONE. FormSubmit takes ONE address in the
-         <form action="https://formsubmit.co/..."> URL; any additional
-         recipients go in the hidden _cc field. A ONE-TIME activation
-         email goes to the action address on the first submission and
-         must be confirmed before any mail is delivered.
+    1. Response collection — DONE. #contact embeds an existing
+         Microsoft Form in an iframe; responses land in Forms, not in
+         email. VERIFY the form is set to "Anyone can respond" or
+         visitors hit a Microsoft sign-in wall inside the frame.
+         The old FormSubmit form is commented out directly below it.
     2. VIDEO_ID_2 / VIDEO_ID_3  (video 1 is DONE)
          -> replace with the YouTube video IDs (the part after v= in
             a YouTube URL). Update the captions under each video too.
@@ -29,10 +29,10 @@
 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>3 Moves Ahead | Helping Your Baby Move, Play and Grow</title>
-<meta name="description" content="3 Moves Ahead is a nine-module program that helps parents support their baby's motor development through play, positive parenting and everyday routines, alongside a community of parents and movement experts.">
+<title>3 Moves Ahead | Helping Your child Move, Play and Grow</title>
+<meta name="description" content="3 Moves Ahead is a nine-module program that helps parents support their child's motor development through play, positive parenting and everyday routines, alongside a community of parents and movement experts.">
 <meta property="og:title" content="3 Moves Ahead">
-<meta property="og:description" content="Helping parents support their baby's motor development through play, positive parenting and everyday routines, with a community of parents and movement experts alongside.">
+<meta property="og:description" content="Helping parents support their child's motor development through play, positive parenting and everyday routines, with a community of parents and movement experts alongside.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://danielmcopeland.github.io/3-moves-ahead/">
 <meta property="og:image" content="https://danielmcopeland.github.io/3-moves-ahead/assets/app-icon.svg">
@@ -249,6 +249,8 @@
   .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
   .form-card .btn { width: 100%; margin-top: .4rem; }
   .form-fine { font-size: .85rem; color: var(--muted); margin: .9rem 0 0; text-align: center; }
+  .form-embed { border-radius: 14px; overflow: hidden; background: #fbfaff; }
+  .form-embed iframe { display: block; width: 100%; height: 720px; border: 0; }
   .thanks { display: none; text-align: center; padding: 2rem 1rem; }
   .thanks .big { font-size: 3rem; line-height: 1; margin-bottom: .6rem; }
   .form-card.is-submitted form { display: none; }
@@ -294,6 +296,7 @@
     .steps, .modules, .videos, .merch, .field-row { grid-template-columns: 1fr; }
     .domains { grid-template-columns: 1fr 1fr; }
     .form-card { padding: 1.6rem; }
+    .form-embed iframe { height: 640px; }
   }
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
@@ -330,9 +333,9 @@
 <section class="hero">
   <div class="container hero-grid">
     <div>
-      <span class="eyebrow">For parents of babies 0 to 24 months</span>
-      <h1>Help your baby move, play and grow, one small step at a time.</h1>
-      <p class="lead">3 Moves Ahead is a nine-module program that shows you how your baby learns to move, and gives you simple, playful ways to support the next milestone during everyday moments.</p>
+      <span>For parents of babies 0 to 24 months</span>
+      <h1>Help your child move, play and grow, one small step at a time.</h1>
+      <p class="lead">3 Moves Ahead is a nine-module program that shows you how your child learns to move, and gives you simple, playful ways to support the next milestone during everyday moments.</p>
       <div class="hero-actions">
         <a class="btn btn-primary" href="#contact">Get more information</a>
         <a class="btn btn-secondary" href="#videos">Watch the videos</a>
@@ -356,15 +359,15 @@
   <div class="container feature">
     <div class="feature-media">
       <div class="blob"></div>
-      <img src="assets/tile-children.png" alt="App screen titled Children Can Do a Lot, showing a smiling baby crawling" width="448" height="800">
+      <img src="assets/tile-children.png" alt="App screen titled Children Can Do a Lot, showing a smiling child crawling" width="448" height="800">
     </div>
     <div>
-      <span class="eyebrow">Why movement matters</span>
+      <span>Why movement matters</span>
       <h2>Your child can already do so many things.</h2>
-      <p class="lead">Think about how much they have changed since the day they were born. Every roll, reach and wobble is your baby learning how their body works.</p>
+      <p class="lead">Think about how much they have changed since the day they were born. Every roll, reach and wobble is your child learning how their body works.</p>
       <p>Babies grow in four connected areas: motion, cognition, communication and emotion. 3 Moves Ahead focuses on <strong>motion</strong>, because movement is how babies explore the world, and it feeds every other kind of learning.</p>
       <ul class="checklist">
-        <li>Understand what your baby is working on right now</li>
+        <li>Understand what your child is working on right now</li>
         <li>Offer the "just-right" challenge, not too easy and not too hard</li>
         <li>Turn feeding, bath time and floor time into practice moments</li>
       </ul>
@@ -377,7 +380,7 @@
 <section class="section band" id="how">
   <div class="container">
     <div class="center narrow">
-      <span class="eyebrow">How it works</span>
+      <span>How it works</span>
       <h2>Three moves, repeated with love.</h2>
       <p class="lead">Each module follows the same simple rhythm so the program fits into real family life.</p>
     </div>
@@ -390,7 +393,7 @@
       <article class="step">
         <div class="step-num" style="--c: var(--purple)">2</div>
         <h3>Play</h3>
-        <p>Try a hands-on activity that gives your baby a just-right challenge. No special equipment, just the things you already have at home.</p>
+        <p>Try a hands-on activity that gives your child a just-right challenge. No special equipment, just the things you already have at home.</p>
       </article>
       <article class="step">
         <div class="step-num" style="--c: var(--navy)">3</div>
@@ -410,7 +413,7 @@
       <img src="assets/tile-overview.png" alt="Program overview showing a winding path through nine modules" width="447" height="800">
     </div>
     <div>
-      <span class="eyebrow">The program</span>
+      <span >The program</span>
       <h2>Nine modules that grow with you.</h2>
       <p class="lead">Start with how children learn, build up your parenting toolkit, and finish by putting it all together with music.</p>
       <p>Each module takes just a few minutes to complete and comes with a homework activity you can start the same day.</p>
@@ -420,7 +423,7 @@
     <div class="modules">
       <article class="module"><div class="ball" style="--c:#b06fd1">1</div><div><h3>How Children Learn</h3><p>Discover the four areas of development and why motion comes first.</p></div></article>
       <article class="module"><div class="ball" style="--c:#7ccdf0">2</div><div><h3>Setting Goals and the Just-Right Challenge</h3><p>Find the sweet spot between too easy and too hard.</p></div></article>
-      <article class="module"><div class="ball" style="--c:#3aa9e0">3</div><div><h3>Exploration and Play</h3><p>Use curiosity and play as your baby's favourite teachers.</p></div></article>
+      <article class="module"><div class="ball" style="--c:#3aa9e0">3</div><div><h3>Exploration and Play</h3><p>Use curiosity and play as your child's favourite teachers.</p></div></article>
       <article class="module"><div class="ball" style="--c:#3f6fc4">4</div><div><h3>Positive Parenting for Motor Learning</h3><p>Encourage, guide and respond in ways that build confidence.</p></div></article>
       <article class="module"><div class="ball" style="--c:#2e3678">5</div><div><h3>Overcoming Challenges in Motor Learning</h3><p>What to do when a skill is slow to come or frustration shows up.</p></div></article>
       <article class="module"><div class="ball" style="--c:#a780b1">6</div><div><h3>Celebrating Success</h3><p>Notice and reward progress so learning stays joyful.</p></div></article>
@@ -435,7 +438,7 @@
 <section class="section band" id="community">
   <div class="container">
     <div class="center narrow">
-      <span class="eyebrow">Community</span>
+      <span >Community</span>
       <h2>Parents learn best from other parents.</h2>
       <p class="lead">The app is one half of 3 Moves Ahead. The other half is people: families working on the very same milestones, movement experts guiding the conversation, and the care team already near you.</p>
     </div>
@@ -450,7 +453,7 @@
           </svg>
         </div>
         <h3>Online discussions</h3>
-        <p>Ask the question you were about to type into a search bar at 2am, and hear back from parents whose baby was working on that exact skill last month.</p>
+        <p>Ask the question you were about to type into a search bar at 2am, and hear back from parents whose child was working on that exact skill last month.</p>
       </article>
       <article class="step">
         <div class="step-num" style="--c: var(--purple)">
@@ -475,7 +478,7 @@
         <p>Find the programs, clinics and support in your area, and get help taking what you have learned to the people who care for your child.</p>
       </article>
     </div>
-    <p class="note"><strong>Connecting you to your local healthcare system.</strong> Knowing what your baby is working on is one thing; getting the right support for it is another. Our community resources point you toward the early-intervention programs, therapists and clinics near you, and help you arrive with the questions worth asking.</p>
+    <p class="note"><strong>Connecting you to your local healthcare system.</strong> Knowing what your child is working on is one thing; getting the right support for it is another. Our community resources point you toward the early-intervention programs, therapists and clinics near you, and help you arrive with the questions worth asking.</p>
   </div>
 </section>
 
@@ -483,7 +486,7 @@
 <section class="section" id="videos">
   <div class="container">
     <div class="center narrow">
-      <span class="eyebrow">Watch</span>
+      <span >Watch</span>
       <h2>See 3 Moves Ahead in action.</h2>
       <p class="lead">Meet the team, hear the story behind the program, and take a peek inside a module.</p>
     </div>
@@ -514,9 +517,9 @@
 <section class="section band" id="parents">
   <div class="container">
     <div class="center narrow">
-      <span class="eyebrow">For parents</span>
+      <span >For parents</span>
       <h2>Made for real families, on real schedules.</h2>
-      <p class="lead">You do not need to be an expert. You just need a few minutes, a little floor space and your baby's favourite person: you.</p>
+      <p class="lead">You do not need to be an expert. You just need a few minutes, a little floor space and your child's favourite person: you.</p>
     </div>
     <div class="benefits">
       <article class="benefit child">
@@ -541,7 +544,7 @@
     </div>
 
     <div class="center narrow" style="margin-top: 4.5rem;">
-      <span class="eyebrow">The 3 Moves Ahead family</span>
+      <span >The 3 Moves Ahead family</span>
       <h2 style="font-size: clamp(1.4rem, 2.4vw, 1.9rem);">Look out for our lions.</h2>
       <p class="lead">Our mama lion and cub show up wherever 3 Moves Ahead does, from the app to your local clinic.</p>
     </div>
@@ -557,19 +560,40 @@
 <section class="section cta-band" id="contact">
   <div class="container cta-grid">
     <div>
-      <span class="eyebrow" style="color: var(--cyan);">Get more information</span>
+      <span  style="color: var(--cyan);">Get more information</span>
       <h2>Want to know more about 3 Moves Ahead?</h2>
       <p class="lead">Leave your email and we will send you details about the program, launch updates and how to get started with your family or clinic.</p>
       <img class="brand-mark" src="assets/logo-primary-white.svg" alt="">
     </div>
     <div class="form-card" id="form-card">
-      <!-- FormSubmit accepts ONE address in the action URL; extra recipients go in _cc. -->
+      <!-- ========================================================
+           MICROSOFT FORMS EMBED
+           Responses land in Microsoft Forms, not in email. The src is
+           the form's own URL plus &embed=true, which serves the chrome
+           less variant intended for iframes.
+           The form must be set to "Anyone can respond" or visitors hit
+           a Microsoft sign-in wall inside the frame. To swap in a
+           different form, replace the whole src.
+           ======================================================== -->
+      <div class="form-embed">
+        <iframe src="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=nPsE4KSwT0K80DImBtXfOB_S21zjre5Asg1mrsnWcU5UN0pEVTJXQlExNDNGNFVSVDlUMjNSM0xFNC4u&amp;embed=true" title="Request more information about 3 Moves Ahead" loading="lazy" allowfullscreen></iframe>
+      </div>
+
+      <!-- ========================================================
+           PREVIOUS FORMSUBMIT FORM - disabled in favour of the
+           Microsoft Forms embed above. Kept verbatim so it can be
+           restored by deleting this comment wrapper. If the embed
+           becomes permanent, delete this block along with the
+           .thanks / .form-card.is-submitted CSS rules and the
+           ?submitted=1 IIFE in the script at the foot of the page.
+           ========================================================
+      NOTE: FormSubmit accepts ONE address in the action URL; extra recipients go in _cc.
       <form action="https://formsubmit.co/danielmcopeland@gmail.com" method="POST" id="info-form">
         <input type="hidden" name="_cc" value="nathalie.linda.maitre@emory.edu">
         <input type="hidden" name="_subject" value="3 Moves Ahead: new information request">
         <input type="hidden" name="_template" value="table">
         <input type="hidden" name="_captcha" value="false">
-        <!-- TODO: replace with the live GitHub Pages URL -->
+        NOTE: _next must point at the live GitHub Pages URL.
         <input type="hidden" name="_next" value="https://danielmcopeland.github.io/3-moves-ahead/?submitted=1#contact">
         <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
 
@@ -595,7 +619,7 @@
         </div>
         <div class="field">
           <label for="f-message">Anything you would like to tell us? <span style="font-weight:400;color:var(--muted)">(optional)</span></label>
-          <textarea id="f-message" name="message" placeholder="My baby is 6 months old and…"></textarea>
+          <textarea id="f-message" name="message" placeholder="My child is 6 months old and…"></textarea>
         </div>
         <button class="btn btn-primary" type="submit">Get more information</button>
         <p class="form-fine">We only use your email to send you information about 3 Moves Ahead. No spam, ever.</p>
@@ -606,6 +630,7 @@
         <p>We have received your request and will be in touch soon.</p>
         <a class="btn btn-secondary" href="#top">Back to top</a>
       </div>
+      -->
     </div>
   </div>
 </section>
@@ -618,7 +643,7 @@
     <div class="footer-grid">
       <div>
         <img src="assets/logo-wordmark-white.svg" alt="3 Moves Ahead">
-        <p>Helping parents support their baby's motor development through play, positive parenting and everyday routines.</p>
+        <p>Helping parents support their child's motor development through play, positive parenting and everyday routines.</p>
       </div>
       <div>
         <h4>Explore</h4>
